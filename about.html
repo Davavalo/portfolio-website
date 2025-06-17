@@ -1,53 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About - Portfolio</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-</head>
-<body>
-  <header class="site-nav">
-    <nav class="nav-left">
-      <a href="index.html">Home</a>
-      <a href="about.html" class="active">About Me</a>
-      <a href="work.html">Work</a>
-    </nav>
-  
-    <h1 class="site-logo">VICTOR DAVALOS</h1>
-  
-    <nav class="nav-right">
-      <a href="https://www.behance.net/" target="_blank">Be</a>
-      <a href="https://www.linkedin.com/" target="_blank">in</a>
-    </nav>
-  </header>
-  
-  <div class="spacer"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About - Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="header"></div>
+    <main>
+      <section class="about-me" aria-labelledby="about-heading">
+        <header>
+          <h2 id="about-heading">Victor Davalos</h2>
+          <h3 class="role">Art Director</h3>
+        </header>
+        <p>
+          With over five years of experience in the creative industry, I
+          specialize in branding, visual storytelling, and design strategy. I’m
+          passionate about creating modern designs that are clear, engaging, and
+          purposeful. My approach centers on understanding each client’s vision
+          and translating their ideas into thoughtful and impactful visuals.
+        </p>
+      </section>
 
-  <main>
-    <section>
-      <h2>Background</h2>
-      <p>I’m a creative professional with a passion for combining design and code. I specialize in building engaging user interfaces, crafting brand identities, and solving real-world problems through thoughtful design.</p>
-    </section>
+      <section class="experience" aria-labelledby="experience-heading">
+        <h2 id="experience-heading">Experience</h2>
 
-    <section>
-      <h2>Skills & Tools</h2>
-      <ul>
-        <li>💻 Frontend: HTML, CSS, JavaScript, React</li>
-        <li>🎨 Design: Figma, Illustrator, Photoshop</li>
-        <li>⚙️ Tools: Git, VS Code, Webflow</li>
-      </ul>
-    </section>
+        <article class="job-container">
+          <header>
+            <h3 class="company">TPC Studios</h3>
+            <p class="title">Art Director</p>
+            <p class="dates">February 2023 – Present</p>
+          </header>
+        </article>
 
-    <section>
-      <h2>Looking Ahead</h2>
-      <p>My goal is to continue growing as a full-stack developer and designer, working on meaningful projects that challenge me and make an impact.</p>
-    </section>
-  </main>
-  <footer>
-    &copy; 2025 Your Name. All rights reserved.
-  </footer>
-  <script src="script.js"></script>
-</body>
+        <article class="job-container">
+          <header>
+            <h3 class="company">SGA Design Group</h3>
+            <p class="title">Graphic Designer</p>
+            <p class="dates">September 2021 – February 2023</p>
+          </header>
+        </article>
+
+        <article class="job-container">
+          <header>
+            <h3 class="company">Byers Creative</h3>
+            <p class="title">Digital Design Intern</p>
+            <p class="dates">May 2021 – September 2021</p>
+          </header>
+        </article>
+      </section>
+    </main>
+    <div id="footer"></div>
+    <script src="script.js"></script>
+  </body>
 </html>

@@ -1,4 +1,4 @@
-/* Global Styles */
+/* Base styles (Mobile-first) */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
 
 :root {
@@ -26,6 +26,7 @@ body {
   background-color: var(--bg);
   color: var(--text);
   line-height: 1.6;
+  font-size: 16px;
 }
 
 main {
@@ -77,69 +78,110 @@ a:focus {
   outline-offset: 2px;
 }
 
-/* Site Navigation */
-.site-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #212121;
-  padding: 1.5rem 2rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  flex-wrap: wrap;
+/* --- Navigation --- */
+body.menu-open {
+  overflow: hidden;
 }
 
+.desktop-nav {
+  display: none;
+}
+
+.site-nav {
+  background-color: #212121;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1.5rem 1rem;
+  position: relative;
+  text-align: center;
+  z-index: 1000;
+}
+
+/* Logo */
 .site-logo {
   max-height: 40px;
   width: auto;
   object-fit: contain;
-  flex: 0 0 auto;
 }
 
-.nav-left,
-.nav-right {
-  display: flex;
-  gap: 1.5rem;
-  flex: 1;
-}
-
-.nav-left {
-  justify-content: flex-start;
-}
-
-.nav-right {
-  justify-content: flex-end;
-}
-
-.site-nav nav a {
+/* Toggle Button (mobile only) */
+.menu-toggle {
+  background: none;
+  border: none;
   color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* Mobile Fullscreen Overlay Menu */
+.main-menu {
+  display: none; /* Prevent flash before JavaScript runs */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(33, 33, 33, 0.95);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  z-index: 1000;
+}
+
+.main-menu.active {
+  display: flex;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.main-menu ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.main-menu li {
+  margin: 1rem 0;
+}
+
+.main-menu a {
+  color: white;
+  font-size: 1.5rem;
   text-decoration: none;
   font-weight: 600;
-  transition: color 0.3s ease;
+  transition: color 0.2s ease;
 }
 
-.site-nav nav a.active,
-.site-nav nav a:hover {
+.main-menu a:hover {
   color: var(--primary);
 }
 
-/* Job Experience Styling */
-.experience .job-container {
-  margin-bottom: 1.5rem;
+.main-menu a.active {
+  color: var(--primary); /* Active link */
 }
 
-.experience .job-container:last-child {
-  margin-bottom: 0;
+/* Divider line between menu sections */
+.main-menu .social-menu {
+  border-top: solid rgba(255, 255, 255, 0.5); /* line styling */
+  margin-top: 1rem; /* space before the line */
+  padding: 1rem 1rem 0 1rem;
+  display: flex;
+  flex-direction: row; /* icons side by side */
+  justify-content: center; /* centers the icons */
+  gap: 1rem;             /* space between icons */
+  list-style: none;        /* remove default bullets */
+
 }
 
-.experience .dates {
-  font-size: 0.9rem;
-  color: #888;
-}
-
-/* Project Grid */
+/* --- Projects --- */
 .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  display: flex;
+  flex-direction: column;
   gap: 1.5rem;
 }
 
@@ -180,7 +222,16 @@ a:focus {
   transform: translateX(2px);
 }
 
-/* Footer */
+/* --- Experience --- */
+.experience .job-container {
+  margin-bottom: 1.5rem;
+}
+
+.experience .job-container:last-child {
+  margin-bottom: 0;
+}
+
+/* --- Footer --- */
 footer {
   text-align: center;
   padding: 2rem 1rem;
@@ -188,4 +239,83 @@ footer {
   color: #888;
   background-color: var(--accent);
   border-top: 1px solid #ddd;
+}
+
+/* --- Tablet (≥768px) --- */
+@media (min-width: 768px) {
+}
+
+/* --- Desktop (≥1024px) --- */
+@media (min-width: 1024px) {
+  @media (min-width: 1024px) {
+  /* Hide mobile toggle on desktop */
+  .menu-toggle {
+    display: none;
+  }
+
+  /* Reposition menu for desktop */
+  .main-menu {
+    position: static;
+    transform: none;
+    opacity: 1;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    height: auto;
+    padding: 0;
+  }
+
+  /* Shared styling for both lists */
+  .main-menu .page-menu,
+  .main-menu .social-menu {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Reset divider for desktop */
+  .main-menu .social-menu {
+    border-top: none;
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  /* Style links */
+  .main-menu a {
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-size: 1rem;
+  }
+
+  .main-menu a:hover {
+    color: var(--primary);
+  }
+
+  /* Icon-specific tweaks */
+  .main-menu .social-menu a {
+    font-size: 1.5rem;
+  }
+
+  /* Optional: spacing between logo and nav */
+  .site-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+    background-color: #212121;
+    gap: 3rem;
+  }
+
+  .site-logo {
+    max-height: 40px;
+  }
+}
+
 }

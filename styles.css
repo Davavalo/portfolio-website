@@ -30,11 +30,14 @@ body {
 }
 
 main {
-  flex: 1;
-  max-width: 960px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-  width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    width: 100%;
 }
 
 main > section:last-child {
@@ -98,14 +101,12 @@ body.menu-open {
   z-index: 1000;
 }
 
-/* Logo */
 .site-logo {
   max-height: 40px;
   width: auto;
   object-fit: contain;
 }
 
-/* Toggle Button (mobile only) */
 .menu-toggle {
   background: none;
   border: none;
@@ -115,9 +116,8 @@ body.menu-open {
   z-index: 1001;
 }
 
-/* Mobile Fullscreen Overlay Menu */
 .main-menu {
-  display: none; /* Prevent flash before JavaScript runs */
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -157,25 +157,20 @@ body.menu-open {
   transition: color 0.2s ease;
 }
 
-.main-menu a:hover {
+.main-menu a:hover,
+.main-menu a.active {
   color: var(--primary);
 }
 
-.main-menu a.active {
-  color: var(--primary); /* Active link */
-}
-
-/* Divider line between menu sections */
 .main-menu .social-menu {
-  border-top: solid rgba(255, 255, 255, 0.5); /* line styling */
-  margin-top: 1rem; /* space before the line */
+  border-top: solid rgba(255, 255, 255, 0.5);
+  margin-top: 1rem;
   padding: 1rem 1rem 0 1rem;
   display: flex;
-  flex-direction: row; /* icons side by side */
-  justify-content: center; /* centers the icons */
-  gap: 1rem;             /* space between icons */
-  list-style: none;        /* remove default bullets */
-
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+  list-style: none;
 }
 
 /* --- Projects --- */
@@ -247,27 +242,23 @@ footer {
 
 /* --- Desktop (≥1024px) --- */
 @media (min-width: 1024px) {
-  @media (min-width: 1024px) {
-  /* Hide mobile toggle on desktop */
   .menu-toggle {
     display: none;
   }
 
-  /* Reposition menu for desktop */
   .main-menu {
     position: static;
     transform: none;
     opacity: 1;
     background: transparent;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     flex-direction: row;
     height: auto;
     padding: 0;
   }
 
-  /* Shared styling for both lists */
   .main-menu .page-menu,
   .main-menu .social-menu {
     display: flex;
@@ -278,14 +269,14 @@ footer {
     margin: 0;
   }
 
-  /* Reset divider for desktop */
   .main-menu .social-menu {
     border-top: none;
-    margin-top: 0;
-    padding-top: 0;
+    padding-left: 2rem;
+    margin-left: 2rem;
+    border-left: 1px solid rgba(255, 255, 255, 0.4);
+    align-items: center;
   }
 
-  /* Style links */
   .main-menu a {
     color: white;
     font-weight: 600;
@@ -298,24 +289,19 @@ footer {
     color: var(--primary);
   }
 
-  /* Icon-specific tweaks */
   .main-menu .social-menu a {
     font-size: 1.5rem;
   }
 
-  /* Optional: spacing between logo and nav */
   .site-nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1.5rem 2rem;
+    padding: 1.5rem 4rem;
     background-color: #212121;
-    gap: 3rem;
   }
 
   .site-logo {
     max-height: 40px;
   }
-}
-
 }

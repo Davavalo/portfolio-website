@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+/* Global Styles */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
 
 :root {
-  --primary: #307FE2;
+  --primary: #307fe2;
   --bg: #ffffff;
-  --text: #000000;
+  --text: #212121;
   --accent: #f4f4f4;
 }
 
@@ -13,11 +14,67 @@
   box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+}
+
 body {
-  font-family: 'Poppins', sans-serif;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   background-color: var(--bg);
   color: var(--text);
   line-height: 1.6;
+}
+
+main {
+  flex: 1;
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+main > section:last-child {
+  margin-bottom: 0;
+}
+
+section {
+  background-color: var(--accent);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+section:hover {
+  transform: translateY(-3px);
+}
+
+h2 {
+  font-size: 1.5em;
+  color: var(--primary);
+  margin-bottom: 0.25rem;
+}
+
+h3 {
+  font-size: 1em;
+  font-weight: 600;
+}
+
+ul {
+  padding-left: 1.25rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+a:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
 }
 
 /* Site Navigation */
@@ -25,22 +82,21 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #000;
+  background-color: #212121;
   padding: 1.5rem 2rem;
-  text-align: center;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  flex-wrap: wrap;
 }
 
 .site-logo {
-  max-height: 35px;
-  height: auto;
+  max-height: 40px;
   width: auto;
-  max-width: 100%;
   object-fit: contain;
-  flex: 1;
+  flex: 0 0 auto;
 }
 
-.nav-left, .nav-right {
+.nav-left,
+.nav-right {
   display: flex;
   gap: 1.5rem;
   flex: 1;
@@ -66,53 +122,9 @@ body {
   color: var(--primary);
 }
 
-
-
-
-/* Main Layout */
-main {
-  max-width: 960px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-}
-
-h2 {
-  font-size: 1.5em;
-  color: var(--primary);
-  margin-bottom: 0.1rem;
-}
-
-h3 {
-  font-size: 1em;
-  font-weight: 600;
-}
-
-ul {
-  padding-left: 1.25rem;
-}
-
-li {
-  margin-bottom: 0.5rem;
-}
-
-/* Section Styling */
-section {
-  background-color: var(--accent);
-  padding: 2rem;
-  margin-bottom: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
-}
-
-section:hover {
-  transform: translateY(-3px);
-}
-
 /* Job Experience Styling */
-
 .experience .job-container {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .experience .job-container:last-child {
@@ -123,9 +135,6 @@ section:hover {
   font-size: 0.9rem;
   color: #888;
 }
-
-
-
 
 /* Project Grid */
 .projects-grid {
@@ -177,5 +186,6 @@ footer {
   padding: 2rem 1rem;
   font-size: 0.9rem;
   color: #888;
-  margin-top: 3rem;
+  background-color: var(--accent);
+  border-top: 1px solid #ddd;
 }

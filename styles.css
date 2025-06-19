@@ -89,7 +89,7 @@ body.menu-open {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 0 auto 1.5rem auto;
+  margin: 0 auto;
   padding: 1.5rem 2rem;
   position: relative;
   text-align: center;
@@ -235,12 +235,16 @@ body.menu-open {
 
 /* --- Footer --- */
 #footer {
-  text-align: center;
-  padding: 2rem 1rem;
   font-size: 0.9rem;
   color: #888;
   background-color: var(--accent);
-  border-top: 1px solid #ddd;
+}
+
+footer {
+  text-align: center;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+  max-width: 1200px;
 }
 
 /* Splash Section */
@@ -308,6 +312,9 @@ section.splash.full-width h2 {
     font-size: 1.75rem;
     line-height: 2.5rem;
     letter-spacing: -0.015rem;
+  }
+    .splash-button {
+    max-width: 200px;
   }
 }
 

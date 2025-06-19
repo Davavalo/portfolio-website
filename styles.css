@@ -31,7 +31,7 @@ body {
 
 main {
   flex: 1;
-  margin: 2rem;
+  padding: 2rem;
 }
 
 main > section:last-child {
@@ -39,15 +39,12 @@ main > section:last-child {
 }
 
 #header {
+  padding: 2rem;
   background-color: #212121;
 }
 
 section {
-  background-color: var(--accent);
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   margin: 0 auto 1.5rem auto;
-  padding: 1.5rem 2rem;
   max-width: 1200px;
 }
 
@@ -90,7 +87,6 @@ body.menu-open {
   align-items: center;
   justify-content: space-between;
   margin: 0 auto;
-  padding: 1.5rem 2rem;
   position: relative;
   text-align: center;
   z-index: 1000;
@@ -181,28 +177,39 @@ body.menu-open {
 }
 
 /* --- Projects --- */
-.projects-grid {
+.grid-container {
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
-  grid-template-columns: 1fr;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .project-card {
-  background-color: #fff;
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  background-color: #e4e4e4;
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.15);
+  opacity: 0.8;
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px 12px 0 0;
+}
+
+.project-info {
+  padding: 1.5em;
 }
 
 .project-card h3 {
   color: var(--primary);
-  margin-bottom: 0.5rem;
 }
 
 .project-card p {
@@ -248,12 +255,12 @@ footer {
 }
 
 /* Splash Section */
-section.splash.full-width {
+.full-width {
   width: 100%;
   max-width: none;
   border-radius: 0;
   margin: 0;
-  padding: 0;
+  padding: 2em;
   background-color: #212121;
   color: white;
 }
@@ -272,7 +279,6 @@ section.splash.full-width h2 {
   flex-direction: column;
   justify-content: center;
   margin: 0 auto 1.5rem auto;
-  padding: 1.5rem 2rem;
   width: 100%;
   max-width: 1200px;
 }

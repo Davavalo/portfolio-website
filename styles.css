@@ -108,10 +108,12 @@ body.menu-open {
 }
 
 .site-logo {
-  max-height: 40px;
+  max-height: 32px;
   width: auto;
   object-fit: contain;
-  display: block; 
+  display: block;
+  max-width: 250px;
+  height: auto;
 }
 
 .menu-toggle {
@@ -320,5 +322,6 @@ footer {
 
   .site-logo {
     max-height: 40px;
+    max-width: none;
   }
 }

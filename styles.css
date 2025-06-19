@@ -90,12 +90,18 @@ body.menu-open {
   display: none;
 }
 
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
 .site-nav {
   background-color: #212121;
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  padding: 1.5rem 1rem;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
   position: relative;
   text-align: center;
   z-index: 1000;
@@ -105,6 +111,7 @@ body.menu-open {
   max-height: 40px;
   width: auto;
   object-fit: contain;
+  display: block; 
 }
 
 .menu-toggle {
@@ -114,6 +121,16 @@ body.menu-open {
   font-size: 2rem;
   cursor: pointer;
   z-index: 1001;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  height: 100%; /* ensures full height of parent container */
+  transform: translateY(-2px);
 }
 
 .main-menu {

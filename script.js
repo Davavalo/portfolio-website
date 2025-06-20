@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
       header.innerHTML = html;
 
       // ✅ Highlight active nav link
-      header.querySelectorAll(".main-menu a").forEach(link => {
+      header.querySelectorAll(".menu a").forEach(link => {
         const linkPath = normalize(new URL(link.href, location.origin).pathname);
         if (linkPath === currentPath) {
           link.classList.add("active");
@@ -21,18 +21,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Mobile menu functionality
       const toggleButton = header.querySelector(".menu-toggle");
-      const mobileMenu = header.querySelector(".main-menu");
+      const navMenu = header.querySelector(".menu");
 
-      if (toggleButton && mobileMenu) {
+      if (toggleButton && navMenu) {
         toggleButton.addEventListener("click", () => {
-          mobileMenu.classList.toggle("active");
+          navMenu.classList.toggle("active");
           document.body.classList.toggle("menu-open");
         });
 
         // Close menu when any link is clicked
-        mobileMenu.querySelectorAll("a").forEach(link => {
+        navMenu.querySelectorAll("a").forEach(link => {
           link.addEventListener("click", () => {
-            mobileMenu.classList.remove("active");
+            navMenu.classList.remove("active");
             document.body.classList.remove("menu-open");
           });
         });
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Close menu with Escape key
         document.addEventListener("keydown", e => {
           if (e.key === "Escape") {
-            mobileMenu.classList.remove("active");
+            navMenu.classList.remove("active");
             document.body.classList.remove("menu-open");
           }
         });

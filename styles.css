@@ -428,6 +428,13 @@ body.menu-open {
   letter-spacing: -0.01rem;
 }
 
+.splash-content img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
 /* Splash Button */
 .splash-button {
   display: inline-block;
@@ -467,21 +474,33 @@ body.menu-open {
 }
 
 .project-card {
+  display: block;
   cursor: pointer;
-  transition: opacity 0.3s ease;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   background-color: var(--accent);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+
+  transition: 
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    opacity 0.25s ease;
 }
 
-.project-card:hover {
-  opacity: 0.8;
+
+.project-card:hover,
+.project-card:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  opacity: 0.95;
 }
 
 .project-card img {
+  display: block;
   width: 100%;
   height: auto;
-  display: block;
   border-radius: 12px 12px 0 0;
 }
 
@@ -520,6 +539,180 @@ body.menu-open {
 .experience .job-container:last-child {
   margin-bottom: 0;
 }
+
+/* Work Entry Styles */
+.work-entry {
+  animation: fadeInUp 0.4s ease both;
+}
+
+.work-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.work-title {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  margin: 0;
+}
+
+.work-meta {
+  font-size: 0.95rem;
+  color: #888;
+  font-weight: 400;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.separator {
+  opacity: 0.6;
+}
+
+.work-line {
+  width: 100%;
+  height: 1px;
+  background: #e5e5e5;
+  margin: 1rem 0;
+}
+
+.work-description {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #333;
+}
+
+.work-entry img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 2rem auto;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+.work-entry figure {
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.work-entry figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #777;
+  font-style: italic;
+}
+
+.work-description + .work-description {
+  margin-top: 1rem;
+}
+
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.image-grid img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease;
+}
+
+.image-grid img:hover {
+  transform: scale(1.025);
+}
+
+/* Lightbox Overlay */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.lightbox-full {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+  animation: fadeIn 0.3s ease;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2.5rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+  padding: 0 1rem;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  opacity: 1;
+}
+
+.lightbox-prev {
+  left: 1rem;
+}
+
+.lightbox-next {
+  right: 1rem;
+}
+
+
+/*  fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+/* fade up animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 
 /* --- Footer --- */
 #footer {

@@ -277,6 +277,7 @@ h2 {
 h3 {
   font-size: 1em;
   font-weight: 600;
+  color: var(--text);
 }
 
 ul {
@@ -483,7 +484,7 @@ body.menu-open {
   text-decoration: none;
   color: inherit;
 
-  transition: 
+  transition:
     transform 0.25s ease,
     box-shadow 0.25s ease,
     opacity 0.25s ease;
@@ -584,35 +585,27 @@ body.menu-open {
   color: #333;
 }
 
-.work-entry img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  margin: 2rem auto;
-  border-radius: 8px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
-}
 
-.work-entry figure {
+.image-grid-section figure {
   margin: 2rem auto;
   text-align: center;
 }
 
-.work-entry figcaption {
+.image-grid-section figcaption {
   margin-top: 0.5rem;
   font-size: 0.9rem;
   color: #777;
   font-style: italic;
 }
 
-.work-description + .work-description {
+.work-description+.work-description {
   margin-top: 1rem;
 }
 
 
 .image-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: 1fr;
   gap: 1.5rem;
 }
 
@@ -644,7 +637,6 @@ body.menu-open {
   max-width: 90%;
   max-height: 90%;
   border-radius: 12px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
   animation: fadeIn 0.3s ease;
 }
 
@@ -686,6 +678,9 @@ body.menu-open {
   right: 1rem;
 }
 
+.grid-title {
+  margin-bottom: .75rem;
+}
 
 /*  fade-in animation */
 @keyframes fadeIn {
@@ -693,6 +688,7 @@ body.menu-open {
     opacity: 0;
     transform: scale(0.98);
   }
+
   to {
     opacity: 1;
     transform: scale(1);
@@ -706,6 +702,7 @@ body.menu-open {
     opacity: 0;
     transform: translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -727,8 +724,8 @@ footer {
   max-width: 1200px;
 }
 
-/* --- Tablet (≥768px) --- */
-@media (min-width: 768px) {
+/* --- Tablet (≥640px) --- */
+@media (min-width: 640px) {
 
   /* Margin Bottom */
   .md\:mb-0 {
@@ -967,6 +964,13 @@ footer {
     font-size: 1.75rem;
     line-height: 2.5rem;
     letter-spacing: -0.015rem;
+  }
+
+  .image-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+    .image-grid > :last-child:nth-child(odd) {
+    grid-column: span 2;
   }
 }
 

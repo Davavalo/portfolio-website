@@ -1,13 +1,12 @@
 /* Base styles (Mobile-first) */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=General+Sans:wght@400;500;600;700&display=swap");
+@import url('./fonts/general-sans.css');
 
 
 :root {
-  --primary: #307fe2;
-  --bg: #ffffff;
-  --text: #212121;
-  --accent: #f4f4f4;
+  --primary: #7a4fff;
+  --charcoal: #2a2c36;
+  --softnoir: #3b3d4a;
+  --accent: #e6e5e1;
 }
 
 /* Base (mobile first) */
@@ -253,20 +252,28 @@
 
 html {
   height: 100%;
-  font-family: "Poppins", sans-serif;
+  font-family: 'General Sans', sans-serif;
 }
 
 body {
   height: 100%;
   display: flex;
   flex-direction: column;
-  background-color: var(--bg);
-  color: var(--text);
+  background-color: var(--charcoal);
+  color: var(--accent);
   line-height: 1.6;
   font-size: 16px;
 }
 
+p {
+  color: var(--accent);
+}
+
 main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   flex: 1;
 }
 
@@ -279,7 +286,7 @@ h2 {
 h3 {
   font-size: 1em;
   font-weight: 600;
-  color: var(--text);
+  color: var(--accent);
 }
 
 ul {
@@ -306,22 +313,19 @@ a:focus {
 
 .full-width {
   width: 100%;
-  background-color: #212121;
-  color: white;
+  background-color: var(--charcoal);
+  color: var(--accent);
 }
 
 .full-width.bg-dark {
-  background-color: #212121;
-  color: white;
+  background-color: var(--charcoal);
+  color: var(--accent);
 }
 
 /* --- Navigation --- */
-body.menu-open {
-  overflow: hidden;
-}
 
 .site-nav {
-  background-color: #212121;
+  background-color: var(--charcoal);
   width: 100%;
   z-index: 1000;
 }
@@ -336,7 +340,7 @@ body.menu-open {
 
 .site-title {
   display: flex;
-  width: 100%;
+  width: auto;
   align-items: center;
   text-decoration: none;
   cursor: pointer;
@@ -352,14 +356,12 @@ body.menu-open {
 }
 
 .site-title span {
-  font-family: 'General Sans', sans-serif;
   font-weight: 600;
-  font-size: 1.25rem; 
-  margin-left: 0.75rem; 
-  letter-spacing: .25px;
+  font-size: 1.25rem;
+  margin-left: 0.75rem;
   line-height: 1;
-  white-space: nowrap; 
-  color: #dfdfd6;
+  white-space: nowrap;
+  color: var(--accent);
 }
 
 
@@ -373,10 +375,16 @@ body.menu-open {
 
 }
 
+
+body.menu-open {
+  overflow: hidden;
+  background-color: var(--softnoir);
+}
+
 .menu-toggle {
   background: none;
   border: none;
-  color: white;
+  color: var(--accent);
   font-size: 2rem;
   cursor: pointer;
   z-index: 1001;
@@ -398,11 +406,11 @@ body.menu-open {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(33, 33, 33, 0.95);
   flex-direction: column;
   align-items: center;
   justify-content: center;
   transform: translateY(-100%);
+  background-color: var(--softnoir);
   opacity: 0;
   transition: transform 0.4s ease, opacity 0.4s ease;
   z-index: 1000;
@@ -427,7 +435,7 @@ body.menu-open {
 }
 
 .menu a {
-  color: white;
+  color: var(--accent);
   font-size: 1.5rem;
   text-decoration: none;
   font-weight: 600;
@@ -457,11 +465,10 @@ body.menu-open {
 
 .splash-content h2 {
   text-align: left;
-  color: #fff;
+  color: var(--accent);
   font-weight: 400;
-  font-size: 1.25rem;
-  line-height: 1.95rem;
-  letter-spacing: -0.01rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 .splash-content img {
@@ -475,63 +482,81 @@ body.menu-open {
 .splash-button {
   display: inline-block;
   margin-top: 1.5rem;
-  padding: 1.25rem 2rem;
+  padding: 1rem 1.5rem;
   background-color: var(--primary);
-  color: white;
+  color: var(--accent);
   font-size: 1rem;
   font-weight: 600;
   text-decoration: none;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
   width: 100%;
-  max-width: 100%;
+  max-width: 150px;
   text-align: center;
-  max-width: 200px;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  outline: none;
 }
 
 .splash-button:hover {
-  background-color: #1f63c2;
-  transform: translateY(-2px);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 .splash-button:focus {
-  outline: 2px solid white;
-  outline-offset: 2px;
+  outline: none;
+  box-shadow: none;
 }
+
+.splash-button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
 
 /* --- Projects --- */
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   max-width: 1200px;
+  margin: 0 auto;
 }
 
 .project-card {
   display: block;
-  cursor: pointer;
   border-radius: 12px;
-  background-color: var(--accent);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  background-color: var(--softnoir);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   overflow: hidden;
+  height: 100%;
   text-decoration: none;
   color: inherit;
-
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    opacity 0.25s ease;
+  outline: none;
 }
 
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 0 2px var(--primary), 0 12px 24px rgba(0, 0, 0, 0.1);
+}
 
-.project-card:hover,
+.project-card:focus {
+  outline: none;
+  box-shadow: none;
+}
+
 .project-card:focus-visible {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  opacity: 0.95;
+  box-shadow: 0 0 0 2px var(--primary);
+  border-radius: 12px;
 }
+
+a.project-card {
+  text-decoration: none;
+  color: inherit;
+}
+
 
 .project-card img {
   display: block;
@@ -550,7 +575,6 @@ body.menu-open {
 
 .project-card p {
   font-size: 0.95rem;
-  color: #333;
 }
 
 .project-link {
@@ -596,7 +620,6 @@ body.menu-open {
 
 .work-meta {
   font-size: 0.95rem;
-  color: #888;
   font-weight: 400;
   display: flex;
   gap: 0.5rem;
@@ -610,33 +633,14 @@ body.menu-open {
 .work-line {
   width: 100%;
   height: 1px;
-  background: #e5e5e5;
+  background: var(--accent);
   margin: 1rem 0;
 }
 
 .work-description {
   font-size: 1rem;
   line-height: 1.75;
-  color: #333;
 }
-
-
-.image-grid-section figure {
-  margin: 2rem auto;
-  text-align: center;
-}
-
-.image-grid-section figcaption {
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
-  color: #777;
-  font-style: italic;
-}
-
-.work-description+.work-description {
-  margin-top: 1rem;
-}
-
 
 .image-grid {
   display: grid;
@@ -644,25 +648,53 @@ body.menu-open {
   gap: 1.5rem;
 }
 
+.image-grid figure {
+  background-color: var(--softnoir);
+  border-radius: 12px;
+  margin: 0;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.image-grid figure:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 0 2px var(--primary), 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.image-grid:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.image-grid:focus-visible {
+  outline: none;
+  box-shadow: none;
+  box-shadow: 0 0 0 2px var(--primary);
+  border-radius: 12px;
+}
+
 .image-grid img {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  transition: transform 0.3s ease;
+  border-radius: 0;
+  background-color: var(--softnoir);
 }
 
-.image-grid img:hover {
-  transform: scale(1.025);
+.image-grid figure figcaption {
+  text-align: center;
+  background-color: transparent;
+  padding: 1em;
 }
+
 
 /* Lightbox Overlay */
 .lightbox {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.85);
+  background-color: var(--softnoir);
   justify-content: center;
   align-items: center;
   z-index: 999;
@@ -749,13 +781,14 @@ body.menu-open {
 /* --- Footer --- */
 #footer {
   font-size: 0.9rem;
-  color: #888;
-  background-color: var(--accent);
+  color: var(--accent);
+  background-color: var(--charcoal);
+  border-top: 1px solid #000;
 }
 
 footer {
   text-align: center;
-  padding: 1.5rem 2rem;
+  padding: 2rem;
   max-width: 1200px;
 }
 
@@ -996,9 +1029,8 @@ footer {
 
 
   .splash-content h2 {
-    font-size: 1.75rem;
-    line-height: 2.5rem;
-    letter-spacing: -0.015rem;
+    font-size: 2rem;
+    line-height: 2.75rem;
   }
 
   .image-grid {

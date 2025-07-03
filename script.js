@@ -75,6 +75,22 @@ document.addEventListener("DOMContentLoaded", () => {
     lightboxImg.alt = img.alt || "";
     currentIndex = index;
     lightbox.style.display = "flex";
+
+    // Disable scroll
+    document.body.classList.add("no-scroll");
+
+    // Hide arrows if only one image
+    const showArrows = currentImages.length > 1;
+    nextBtn.style.display = showArrows ? "block" : "none";
+    prevBtn.style.display = showArrows ? "block" : "none";
+  }
+
+  function closeLightbox() {
+    lightbox.style.display = "none";
+    lightboxImg.src = "";
+
+    // Re-enable scroll
+    document.body.classList.remove("no-scroll");
   }
 
   document.querySelectorAll(".lightbox-img").forEach((img) => {
@@ -97,15 +113,11 @@ document.addEventListener("DOMContentLoaded", () => {
     showImage(currentIndex);
   });
 
-  closeBtn?.addEventListener("click", () => {
-    lightbox.style.display = "none";
-    lightboxImg.src = "";
-  });
+  closeBtn?.addEventListener("click", closeLightbox);
 
   lightbox?.addEventListener("click", (e) => {
     if (e.target === lightbox || e.target === lightboxImg) {
-      lightbox.style.display = "none";
-      lightboxImg.src = "";
+      closeLightbox();
     }
   });
 
@@ -120,8 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
           (currentIndex - 1 + currentImages.length) % currentImages.length;
         showImage(currentIndex);
       } else if (e.key === "Escape") {
-        lightbox.style.display = "none";
-        lightboxImg.src = "";
+        closeLightbox();
       }
     }
   });

@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // --- existing logic here ---
   const normalize = (path) => path.replace(/\/index\.html$/, "") || "/";
   const currentPath = normalize(window.location.pathname);
 
@@ -10,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!header) return;
       header.innerHTML = html;
 
+      // Highlight active nav link
       header.querySelectorAll(".menu a").forEach((link) => {
         const linkPath = normalize(
           new URL(link.href, location.origin).pathname
@@ -25,19 +25,24 @@ document.addEventListener("DOMContentLoaded", () => {
       if (toggleButton && navMenu) {
         toggleButton.addEventListener("click", () => {
           navMenu.classList.toggle("active");
+          toggleButton.classList.toggle("active");
           document.body.classList.toggle("menu-open");
         });
 
-        navMenu.querySelectorAll("a").forEach((link) => {
+        // Only close the menu when a nav item (not social link) is clicked
+        navMenu.querySelectorAll(".menu-list a").forEach((link) => {
           link.addEventListener("click", () => {
             navMenu.classList.remove("active");
+            toggleButton.classList.remove("active");
             document.body.classList.remove("menu-open");
           });
         });
 
+        // ESC key closes menu
         document.addEventListener("keydown", (e) => {
           if (e.key === "Escape") {
             navMenu.classList.remove("active");
+            toggleButton.classList.remove("active");
             document.body.classList.remove("menu-open");
           }
         });
@@ -72,9 +77,8 @@ document.addEventListener("DOMContentLoaded", () => {
     lightbox.style.display = "flex";
   }
 
-  document.querySelectorAll(".lightbox-img").forEach((img, i) => {
+  document.querySelectorAll(".lightbox-img").forEach((img) => {
     img.addEventListener("click", () => {
-      // Get all .lightbox-img in the same .image-grid
       const grid = img.closest(".image-grid");
       currentImages = Array.from(grid.querySelectorAll(".lightbox-img"));
       const clickedIndex = currentImages.indexOf(img);
@@ -105,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Keyboard navigation
+  // Keyboard navigation for lightbox
   document.addEventListener("keydown", (e) => {
     if (lightbox.style.display === "flex") {
       if (e.key === "ArrowRight") {

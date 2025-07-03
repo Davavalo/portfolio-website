@@ -656,7 +656,7 @@ a.project-card {
 }
 
 .project-card h3 {
-  color: var(--primary);
+  color: var(--accent);
 }
 
 .project-card p {

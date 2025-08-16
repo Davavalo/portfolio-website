@@ -10,7 +10,7 @@ html {
 }
 
 body {
-  height: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   background-color: var(--charcoal);
@@ -31,20 +31,14 @@ body.menu-open {
 }
 
 main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   flex: 1;
 }
 
 .container {
-  max-width: 1152px;
+  max-width: 1200px;
   width: 100%;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  margin-left: auto;
-  margin-right: auto;
+  padding: 0 2rem;
+  margin: 0 auto;
 }
 
 .full-width {

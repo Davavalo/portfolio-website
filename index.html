@@ -7,44 +7,45 @@
   <title>Home - Portfolio</title>
 
   <link rel="icon" href="images/victor-favicon.png" type="image/png">
-  <link rel="stylesheet" href="css\styles.css" />
+  <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="fonts/general-sans.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    xintegrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-  <div class="full-width site-nav" id="header"></div>
-  <section class="full-width bg-dark mb-4 pb-4 pt-4">
-    <div class="container splash-content">
-      <h2>
-        Victor is a designer with over five years of experience in branding,
-        visual storytelling, and design strategy. He creates modern, engaging
-        visuals rooted in clarity, purpose, and a deep understanding of each
-        client’s vision.
-      </h2>
-      <a href="work.html" class="splash-button">View Work</a>
-    </div>
-  </section>
+  <!-- The <body> tag is now the flex container for the entire page -->
+  <div id="header"></div>
   <main>
-    <section class="container mb-4">
-      <div class="grid-container">
-        <a href="all-you-need-is-love.html" class="project-card">
-          <img src="images\Toyland Ball\toylandball thumbnail.png" alt="Toyland Ball Thumbnail" />
-          <div class="project-info">
-            <h3>All You Need is Love</h3>
-            <p>2024</p>
-          </div>
-        </a>
-        <a href="sga-design-group.html" class="project-card">
-          <img src="images\SGA Design Group\sga thumbnail.png" alt="SGA Thumbnail" />
-          <div class="project-info">
-            <h3>SGA Design Group</h3>
-            <p>2023</p>
-          </div>
-        </a>
+    <section class="full-width bg-dark mb-4">
+      <div class="container splash-content">
+        <h2>
+          Victor is a designer with over five years of experience in branding,
+          visual storytelling, and design strategy. He creates modern, engaging
+          visuals rooted in clarity, purpose, and a deep understanding of each
+          client’s vision.
+        </h2>
+        <a href="work.html" class="splash-button">View Work</a>
       </div>
     </section>
+      <section class="container mb-4">
+        <div class="projects-grid">
+          <a href="all-you-need-is-love.html" class="project-card">
+            <img src="images/Toyland Ball/toylandball thumbnail.png" alt="Toyland Ball Thumbnail" />
+            <div class="project-info">
+              <h3>All You Need is Love</h3>
+              <p>2024</p>
+            </div>
+          </a>
+          <a href="sga-design-group.html" class="project-card">
+            <img src="images/SGA Design Group/sga thumbnail.png" alt="SGA Thumbnail" />
+            <div class="project-info">
+              <h3>SGA Design Group</h3>
+              <p>2023</p>
+            </div>
+          </a>
+        </div>
+      </section>
   </main>
   <div id="footer"></div>
   <script src="script.js"></script>

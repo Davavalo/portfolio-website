@@ -1,17 +1,15 @@
-@use 'variables';
-@use 'globals';
-@use 'typography';
+@use 'base/variables';
+@use 'base/globals';
+@use 'base/typography';
 
-@use 'navigation';
-@use 'splash';
-@use 'project-card';
-@use 'experience';
-@use 'image-grid';
-@use 'lightbox';
-@use 'footer';
+@use 'components/navigation';
+@use 'components/splash';
+@use 'components/project-card';
+@use 'components/job-experience';
+@use 'components/image-grid';
+@use 'components/lightbox';
+@use 'components/footer';
 
-@use 'spacing';
+@use 'utilities/spacing';
 
-@use 'keyframes';
-
-@use 'responsive';
+@use 'animations/keyframes';

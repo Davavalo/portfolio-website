@@ -5,11 +5,17 @@
   z-index: 1000;
 }
 
+// Add a container for max-width and centering
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+}
+
 .nav-inner {
   display: flex;
   align-items: center;
   height: 64px;
-  padding: 2rem;
   justify-content: space-between;
 }
 
@@ -66,6 +72,11 @@
   line-height: 1;
   max-width: 36px;
   transform: translateY(-2px);
+
+  // Hide the menu toggle on desktop
+  @media (min-width: 1024px) {
+    display: none;
+  }
 
   // Nest styles for the hamburger icon
   span {
@@ -148,6 +159,24 @@
     }
   }
 
+  // Nest desktop styles for the menu
+  @media (min-width: 1024px) {
+    display: flex !important;
+    position: static;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    opacity: 1 !important;
+    transform: none !important;
+    gap: 2rem;
+    padding: 0;
+    pointer-events: auto;
+    visibility: visible;
+  }
+
   // Nest children styles
   .menu-list {
     display: flex;
@@ -159,6 +188,19 @@
     text-align: center;
     align-items: flex-start;
 
+    // Nest desktop styles for menu-list
+    @media (min-width: 1024px) {
+      display: flex;
+      flex-direction: row;
+      gap: 1.5rem;
+      width: auto;
+      padding: 0;
+      margin: 0;
+      text-align: left;
+      align-items: center;
+      height: 40px;
+    }
+
     li {
       width: 100%;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -166,6 +208,16 @@
       opacity: 0;
       transform: translateY(10px);
       transition: opacity 0.3s ease, transform 0.3s ease;
+
+      // Nest desktop li styles
+      @media (min-width: 1024px) {
+        width: auto;
+        border-bottom: none;
+        padding-bottom: 0;
+        margin: 0;
+        opacity: 1 !important;
+        transform: none !important;
+      }
 
       a {
         display: block;
@@ -175,6 +227,12 @@
         font-weight: 600;
         text-decoration: none;
         transition: color 0.2s ease;
+
+        // Nest desktop a styles
+        @media (min-width: 1024px) {
+          width: auto;
+          font-size: 1rem;
+        }
         
         &:hover,
         &.active {
@@ -183,7 +241,7 @@
       }
     }
   }
-
+  
   .menu-social {
     list-style: none;
     display: flex;
@@ -193,11 +251,32 @@
     padding: 0;
     margin: 0;
 
+    // Nest desktop styles for menu-social
+    @media (min-width: 1024px) {
+      display: flex;
+      flex-direction: row;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
     li {
+      // Nest desktop li styles
+      @media (min-width: 1024px) {
+        margin-bottom: 0;
+      }
+
       a {
         color: var(--accent);
         font-size: 1.5rem;
         transition: color 0.2s ease, transform 0.2s ease;
+
+        // Nest desktop a styles
+        @media (min-width: 1024px) {
+          font-size: 1.25rem;
+        }
         
         &:hover {
           color: var(--primary);
@@ -205,5 +284,14 @@
         }
       }
     }
+  }
+}
+
+.nav-divider {
+  // Add desktop-only styles for the divider
+  @media (min-width: 1024px) {
+    width: 2px;
+    height: 24px;
+    background-color: var(--softnoir);
   }
 }

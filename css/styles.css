@@ -379,7 +379,7 @@ a:focus {
 }
 @media (min-width: 1024px) {
   .splash-content h2 {
-    font-size: 2.25rem;
+    font-size: 2.5rem;
     line-height: 3.25rem;
     letter-spacing: -0.02rem;
   }
@@ -489,48 +489,78 @@ a.project-card {
   color: inherit;
 }
 
-/* --- Experience & Contact --- */
-.experience .job-container {
+/* --- Reusable Components --- */
+/* Styles for a job entry container */
+.job-container {
   margin-bottom: 1.5rem;
 }
-.experience .job-container:last-child {
+
+/* Specific styles for the last job container */
+.job-container:last-child {
   margin-bottom: 0;
 }
-.experience .work-entry {
+
+/* Styles for a work entry, typically used for portfolio items */
+.work-entry {
   animation: fadeInUp 0.4s ease both;
 }
-.experience .work-heading {
+
+/* Container for the heading and metadata of a work entry */
+.work-heading {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
 }
-.experience .work-title {
+
+/* Title of a work entry */
+.work-title {
   font-size: 2rem;
   font-weight: 600;
   letter-spacing: -0.5px;
   margin: 0;
 }
-.experience .work-meta {
+
+/* Metadata for a work entry (year, role) */
+.work-meta {
   font-size: 0.95rem;
   font-weight: 400;
   display: flex;
   gap: 0.5rem;
   align-items: center;
 }
-.experience .separator {
+
+/* Separator dot or character */
+.separator {
   opacity: 0.6;
 }
-.experience .work-line {
+
+/* Horizontal line component */
+.work-line {
   width: 100%;
   height: 1px;
   background: var(--accent);
   margin: 1rem 0;
 }
-.experience .work-description {
+
+/* Description paragraph for a work entry */
+.work-description {
   font-size: 1rem;
   line-height: 1.75;
 }
 
+/* General styles for links within the contact section or similar areas */
+.contact-link {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+/* Hover state for contact links */
+.contact-link:hover {
+  color: var(--primary);
+}
+
+/* Contact Styles */
 .contact-me a {
   color: var(--accent);
   text-decoration: none;

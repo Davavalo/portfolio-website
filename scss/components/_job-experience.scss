@@ -1,64 +1,71 @@
-/* --- Experience & Contact --- */
+/* --- Reusable Components --- */
 
-.experience {
-  .job-container {
-    margin-bottom: 1.5rem;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  .work-entry {
-    animation: fadeInUp 0.4s ease both;
-  }
-
-  .work-heading {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-  }
-
-  .work-title {
-    font-size: 2rem;
-    font-weight: 600;
-    letter-spacing: -0.5px;
-    margin: 0;
-  }
-
-  .work-meta {
-    font-size: 0.95rem;
-    font-weight: 400;
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
-  }
-
-  .separator {
-    opacity: 0.6;
-  }
-
-  .work-line {
-    width: 100%;
-    height: 1px;
-    background: var(--accent);
-    margin: 1rem 0;
-  }
-
-  .work-description {
-    font-size: 1rem;
-    line-height: 1.75;
-  }
+/* Styles for a job entry container */
+.job-container {
+  margin-bottom: 1.5rem;
 }
 
-.contact-me {
-  a {
-    color: var(--accent);
-    text-decoration: none;
-    transition: color 0.2s ease;
+/* Specific styles for the last job container */
+.job-container:last-child {
+  margin-bottom: 0;
+}
 
-    &:hover {
-      color: var(--primary);
-    }
-  }
+/* Styles for a work entry, typically used for portfolio items */
+.work-entry {
+  animation: fadeInUp 0.4s ease both;
+}
+
+/* Container for the heading and metadata of a work entry */
+.work-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+/* Title of a work entry */
+.work-title {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  margin: 0;
+}
+
+/* Metadata for a work entry (year, role) */
+.work-meta {
+  font-size: 0.95rem;
+  font-weight: 400;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+/* Separator dot or character */
+.separator {
+  opacity: 0.6;
+}
+
+/* Horizontal line component */
+.work-line {
+  width: 100%;
+  height: 1px;
+  background: var(--accent);
+  margin: 1rem 0;
+}
+
+/* Description paragraph for a work entry */
+.work-description {
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+/* General styles for links within the contact section or similar areas */
+.contact-link {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+/* Hover state for contact links */
+.contact-link:hover {
+  color: var(--primary);
 }

@@ -11,15 +11,15 @@
     font-size: 1.5rem;
     line-height: 2rem;
 
-    // Nest tablet styles inside the h2 selector
+    // Tablet styles
     @media (min-width: 640px) {
       font-size: 2rem;
       line-height: 2.75rem;
     }
 
-    // Nest desktop styles inside the h2 selector
+    // Desktop styles
     @media (min-width: 1024px) {
-      font-size: 2.25rem;
+      font-size: 2.5rem;
       line-height: 3.25rem;
       letter-spacing: -0.02rem;
     }

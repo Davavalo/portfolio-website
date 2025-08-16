@@ -1,0 +1,64 @@
+/* --- Experience & Contact --- */
+
+.experience {
+  .job-container {
+    margin-bottom: 1.5rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .work-entry {
+    animation: fadeInUp 0.4s ease both;
+  }
+
+  .work-heading {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .work-title {
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    margin: 0;
+  }
+
+  .work-meta {
+    font-size: 0.95rem;
+    font-weight: 400;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .separator {
+    opacity: 0.6;
+  }
+
+  .work-line {
+    width: 100%;
+    height: 1px;
+    background: var(--accent);
+    margin: 1rem 0;
+  }
+
+  .work-description {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+}
+
+.contact-me {
+  a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: var(--primary);
+    }
+  }
+}

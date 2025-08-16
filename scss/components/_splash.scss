@@ -1,0 +1,56 @@
+/* Splash Section */
+.splash-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  h2 {
+    text-align: left;
+    color: var(--accent);
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+}
+
+.splash-button {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 1rem 1.5rem;
+  background-color: var(--primary);
+  color: var(--accent);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  max-width: 150px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  outline: none;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+    border-radius: 8px;
+  }
+}

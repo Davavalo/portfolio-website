@@ -1,0 +1,28 @@
+h2 {
+  font-size: 1.5em;
+  color: var(--primary);
+  margin-bottom: 0.25rem;
+}
+
+h3 {
+  font-size: 1em;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+p {
+  color: var(--accent);
+}
+
+ul {
+  padding-left: 1.25rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+a:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}

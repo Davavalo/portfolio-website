@@ -1,0 +1,50 @@
+.image-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+
+  // Nest figure styles inside the grid
+  figure {
+    background-color: var(--softnoir);
+    border-radius: 12px;
+    margin: 0;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+
+    // Nest pseudo-classes with the parent selector '&'
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 0 2px var(--primary), 0 12px 24px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  // Nest image styles inside figure
+  figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    background-color: var(--softnoir);
+  }
+
+  // Nest caption styles inside figure
+  figure figcaption {
+    text-align: center;
+    background-color: transparent;
+    padding: 1em;
+  }
+}
+
+// These focus styles apply to the container itself
+.image-grid:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.image-grid:focus-visible {
+  outline: none;
+  box-shadow: none;
+  box-shadow: 0 0 0 2px var(--primary);
+  border-radius: 12px;
+}

@@ -1,0 +1,61 @@
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: var(--softnoir);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+
+  // Nest the full image styles
+  &-full {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 12px;
+    animation: fadeIn 0.3s ease;
+  }
+
+  // Nest the close button styles
+  &-close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+  }
+
+  // Nest the navigation buttons
+  &-prev,
+  &-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2.5rem;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+    padding: 0 1rem;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  // Nest specific positions for prev/next buttons
+  &-prev {
+    left: 1rem;
+  }
+
+  &-next {
+    right: 1rem;
+  }
+}
+
+.grid-title {
+  margin-bottom: 0.75rem;
+}

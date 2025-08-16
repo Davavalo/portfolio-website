@@ -734,6 +734,18 @@ a.project-card {
   line-height: 1.75;
 }
 
+/* Contact Styles */
+.contact-me a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contact-me a:hover {
+  color: var(--primary);
+}
+
+
 .image-grid {
   display: grid;
   grid-template-columns: 1fr;

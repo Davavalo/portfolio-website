@@ -54,10 +54,16 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((res) => res.text())
     .then((html) => {
       const footer = document.getElementById("footer");
-      if (footer) footer.innerHTML = html;
+      if (footer) {
+        footer.innerHTML = html;
+        // Now update the year
+        const yearSpan = footer.querySelector("#year");
+        if (yearSpan) {
+          yearSpan.textContent = new Date().getFullYear();
+        }
+      }
     })
     .catch((err) => console.error("Footer load failed:", err));
-
   // Lightbox with next/prev functionality
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = lightbox?.querySelector(".lightbox-full");
